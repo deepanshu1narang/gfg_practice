@@ -20,3 +20,4 @@ function insersionSort(arr, n) {
 let arr = [4, 1, 23, 65, 86, 35, 96, 34];
 insersionSort(arr, arr.length);
 console.log(arr);
+// nothing
