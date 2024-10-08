@@ -1,5 +1,5 @@
 function findMaximum(arr, n) {
-    // if1st or last element is the maximum then why to struggle)
+    // if 1st or last element is the maximum then why to struggle)
     if (n === 1 || arr[0] > arr[1]) {
         return arr[0];
     }
