@@ -1486,3 +1486,36 @@ function inversionCount(arr) {
 }
 
 console.log(inversionCount([2, 4, 1, 3, 5]));
+
+function findTriplets(arr, n) {
+    //your code here
+
+    if (n <= 2) return false;
+    else if (n === 3) {
+        let sum = arr.reduce((a, c) => a + c, 0);
+        if (sum === 0) return true;
+        else return false;
+    }
+
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            let set1 = new Set(arr);
+            if (i !== j) {
+                let x1 = arr[i] + arr[j];
+                set1.delete(arr[i]);
+                set1.delete(arr[j]);
+                x1 = -1 * x1;
+                if (set1.has(x1)) {
+                    console.log(i, j);
+                    console.log(x1);
+                    console.log(arr.indexOf(x1));
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+console.log(findTriplets([4, -16, 43, 4, 7, -36, 18], 7));

@@ -23,7 +23,8 @@ function mergeThree(A, B, C) {
                 k++;
             }
             else {
-                temp.push(A[i], B[j]);
+                temp.push(A[i]);
+                temp.push(B[j]);
                 i++;
                 j++;
             }
