@@ -5,11 +5,14 @@ class Queue {
         this.cap = cap;
         this.arr = new Array(cap);
         this.len = 0;
+        this.front = 0;
+        this.rear = 0;
     }
-    front = 0;
-    back = 0;
 
     enqueue(x) {
+        if (this.len === this.cap) {
+            throw new Error("capacity already full");
+        }
         this.arr[this.rear] = x;
         this.rear = (this.rear + 1) % this.cap;
         this.len++;
@@ -23,9 +26,13 @@ class Queue {
         return res;
     }
     getFront() {
+        if (this.len === 0) return null;
+
         return this.arr[this.front];
     }
     getRear() {
+        if (this.len === 0) return null;
+
         return this.arr[this.rear];
     }
     size() {
@@ -35,3 +42,5 @@ class Queue {
         return this.len;
     }
 }
+
+const q1 = new Queue(5);
