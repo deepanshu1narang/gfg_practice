@@ -1,5 +1,6 @@
 const approach = `
 The solution to this algorithm will require 3 pointers to iterate throughout the array, swapping the necessary elements.
+Traverse over the array till mid <= high, according to the value of arr[mid] we can have three cases:
 
 (1) Create a low pointer at the beginning of the array and a high pointer at the end of the array.
 (2) Create a mid pointer that starts at the beginning of the array and iterates through each element.

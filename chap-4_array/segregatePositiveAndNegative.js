@@ -12,7 +12,7 @@ function segregateElements(arr, n) {
     }
     let x = 0;
     for (let i = p; i < n; i++) {
-        if (arr2[i] === 0) console.log(arr2[i - 1], arr2[i], arr2[i + 1], "arr2");
+        // if (arr2[i] === 0) console.log(arr2[i - 1], arr2[i], arr2[i + 1], "arr2");
         arr[i] = arr2[x++];
     }
     return arr;

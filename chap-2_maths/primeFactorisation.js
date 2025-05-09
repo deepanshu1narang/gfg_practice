@@ -119,3 +119,22 @@ function primeFactorisation4(num) {
     if (num > 3)
         arr.push(num);
 }
+
+function primeFactorisation5(num) {
+    let pFs = [];
+    let i = 2;
+    while (num > 1 && i * i <= num) {
+        console.log(num, i);
+        if (num % i === 0) {
+            pFs.push(i);
+            num /= i;
+        }
+        else {
+            i++;
+        }
+    }
+    // corner case
+    if (num > 1)
+        pFs.push(num);
+    return pFs;
+}

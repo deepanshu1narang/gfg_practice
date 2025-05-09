@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* row - vertical
+column - horizontal */
+/* gid-template-rows/columns ===> for exact number of rows/columns */
+/* gid-auto-rows/columns ===> for unknown number of rows/columns */
+/* grid-column: grid-column-start / grid-column-end */
+/* grid-row: grid-row-start / grid-row-end */
+/* grid-area: row-start  / col-start / row-end / col-end; */
+/* grid-auto-flow: to give direction of flow */
+
+.container {
+    border: 3px solid black;
+    display: grid;
+    /* grid-template-columns: repeat(13, 100px);
+    grid-template-rows: repeat(6, 100px); */
+    grid-auto-columns: 100px;
+    grid-auto-rows: 100px;
+    grid-auto-flow: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+
+.mark {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    /* background-color: blue; */
+    border: 1px dotted blue;
+    opacity: 0.3;
+}
+
+.item {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.item1 {
+    grid-row: 1 / 3;
+    /* grid-row: span 2; */
+    grid-column: 1 / 5;
+    background-color: green;
+}
+
+.item2 {
+    grid-row: 1 / 3;
+    grid-column: 5 / 7;
+    /* grid-column: 7 / 9; */
+    background-color: orange;
+}
+
+.item3 {
+    /* to define whole area for grid */
+    background-color: aqua;
+    grid-area: 3 / 1 / 7 / 7;
+}
+
+.item4 {
+    background-color: cornflowerblue;
+    z-index: 1;
+    grid-area: 2 / 4 / 4 / 6;
+}
+
+/* fractional values */
+
+.container2 {
+    margin-top: 5rem;
+    border: 3px solid black;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #f0f0f0;
+    /* grid-template-columns: 1fr 3fr 2fr; */
+    /* grid-template-columns: 1fr minmax(400px, 3fr) 4fr; */
+    grid-template-rows: 100px 300px 100px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'header header'
+        'main aside'
+        'footer footer';
+}
+
+.grid-item {
+    border: 0.3rem solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.grid-item1 {
+    grid-area: header;
+}
+
+.grid-item2 {
+    grid-area: main;
+}
+
+.grid-item3 {
+    grid-area: aside;
+}
+
+.grid-item4 {
+    grid-area: footer;
+}
+
+/* for grid justify-items and align-items have default property as stretch */
+/* justify-content aligns the items along row axis */
+/* align-content aligns the items along column axis */
+.container3 {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(2, 100px);
+    justify-items: stretch;
+    align-items: center;
+    height: 400px;
+    justify-content: space-evenly;
+    align-content: space-between;
+    border: 1px solid brown;
+}
+
+.gridItem {
+    border: 0.3rem solid sandybrown;
+}
+
+/* .gridItem1 {
+    justify-self: end;
+    align-self: stretch;
+    } */
+
+/* RWD with grid without media queries
+    */
+
+.container4 {
+    display: grid;
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    border: 1px solid purple;
+    padding: 1px;
+}
+
+.grid_item {
+    border: 1px solid black;
+}
