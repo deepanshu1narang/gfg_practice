@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssSelectors.css">
+    <title>Document</title>
+</head>
+
+<body id="app">
+    <h1>This is for CSS selectors</h1>
+    <div class="red">This is a div</div>
+    <div class="parent">
+        not in red class
+        <p class="red">This is red class</p>
+    </div>
+    <span class="blue">This is a span</span>
+    <ul>
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <p>adjecent to ul</p>
+    <div>
+        <span>
+            <b>nested text</b>
+        </span>
+        <p>some p tag</p>
+        <div>
+            <span>some random span<span>nested span in a <span>@@!!231</span></span> <b>strong</b> span</span>
+        </div>
+    </div>
+
+    <div id="container">
+        <ul>
+            <li> List Item
+                <ul>
+                    <li data-attr="attribute"> Child </li>
+                    <li data-attr="attribute2"> Child </li>
+                    <li data-attr="attribute3"> Child </li>
+                </ul>
+            </li>
+            <li class="green"> List Item </li>
+            <li> List Item </li>
+            <li class="yellow"> List Item </li>
+            <li class="yellow"> List Item </li>
+        </ul>
+    </div>
+    <div id="pseudo-elements">
+        <label class="required">Name</label>
+        <input type="text" required />
+        <button data-tooltip="Tooltip">Submit</button>
+    </div>
+
+</body>
+<!-- <script src="maths.js"></script> -->
+<!-- <script src="polyfill_practice.js"></script> -->
+<!-- <script src="funtionalProgramming.js"></script> -->
+<!-- <script src="patterns.js"></script> -->
+<script src="matching_strings.js"></script>
+
+</html>
