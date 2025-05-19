@@ -4,10 +4,10 @@ function printSubArrays(arr) {
     const n = arr.length;
     let res = [];
     for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n - i; j++) {
+        for (let j = i; j < n; j++) {
             let res1 = [];
             let str = "";
-            for (let k = i; k <= i + j; k++) {
+            for (let k = i; k <= j; k++) {
                 str += arr[k];
                 res1.push(arr[k]);
             }
