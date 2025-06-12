@@ -23,3 +23,26 @@ var lengthOfLongestSubstring = function (s) {
 console.log(lengthOfLongestSubstring("pwwkew"));
 console.log(lengthOfLongestSubstring("abcabcbb"));
 console.log(lengthOfLongestSubstring("cadbzabcd"));
+
+function lengthOfLongestSubstring(s) {
+    const map1 = new Map();
+    let len = 0;
+    let maxLen = 0;
+
+    let slow = 0;
+    for (let fast = 0; fast < s.length; fast++) {
+        if (!map1.has(s[fast])) {
+            map1.set(s[fast], fast);
+        }
+        else {
+            let slowest = map1.get(s[fast]) + 1;
+            slow = Math.max(slow, slowest);
+            map1.set(s[fast], fast);
+        }
+
+        len = fast + 1 - slow;
+        console.log(slow, fast);
+        maxLen = Math.max(len, maxLen);
+    }
+    return maxLen;
+};

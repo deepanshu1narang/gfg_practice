@@ -7,30 +7,60 @@ link1423.href = "https://leetcode.com/problems/maximum-points-you-can-obtain-fro
 link1423.target = "_blank";
 q1.appendChild(link1423);
 
-function maxPoints(nums, k) {
-    const n = nums.length;
+function maxPoints(cardPoints, k) {
+    const n = cardPoints.length;
+    let right = n - 1;
+    let left = right - k + 1;
+    let sum = 0;
 
-    let lSum = 0;
-    let rSum = 0;
-    let maxPoints = -Infinity;
+    for (let i = left; i <= right; i++) {
+        sum += cardPoints[i];
+    }
+    let maxSum = sum;
+
+    while (left < n) {
+        right++;
+        sum = sum + cardPoints[right % n] - cardPoints[left % n];
+        maxSum = Math.max(maxSum, sum);
+        left++;
+    }
+
+    return maxSum;
+};
+console.log(maxPoints([1, 2, 3, 4, 5, 6, 1], 3));
+
+function maxPoints2(cardPoints, k) {
+    const n = cardPoints.length;
+
+    let leftSum = 0;
+    let rightSum = 0;
+
+    let sum = 0;
+    let maxSum = 0;
+
+    let left = 0;
+    let right = n - 1;
 
     for (let i = 0; i < k; i++) {
-        lSum += nums[i];
+        leftSum += cardPoints[i];
     }
 
-    maxPoints = lSum;
+    left = k - 1;
+    sum = leftSum + rightSum;
+    maxSum = sum;
 
-    let r = n - 1;
-    for (let l = k - 1; l >= 0; l--) {
-        lSum -= nums[l];
-        rSum += nums[r];
-        r--;
-
-        maxPoints = Math.max(maxPoints, lSum + rSum);
+    while (left >= 0) {
+        leftSum -= cardPoints[left];
+        rightSum += cardPoints[right];
+        sum = leftSum + rightSum;
+        maxSum = Math.max(maxSum, sum);
+        left--;
+        right--;
     }
-    return maxPoints;
-}
+
+    return maxSum;
+};
 
 
 
-console.log(maxPoints([6, 2, 3, 4, 7, 2, 1, 7, 1], 4));
+console.log(maxPoints2([100, 40, 17, 9, 73, 75], 3));
