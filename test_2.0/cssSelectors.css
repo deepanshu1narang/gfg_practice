@@ -1,0 +1,112 @@
+div .red {
+    background-color: rgb(218, 160, 160);
+    padding-left: 0.7rem;
+}
+
+.red {
+    background-color: red;
+}
+
+.parent {
+    padding-left: 1rem;
+}
+
+div.red {
+    color: white;
+}
+
+div,
+span,
+ul {
+    border: 0.2rem red double;
+}
+
+span,
+li.red {
+    font-size: x-large;
+}
+
+div b {
+    color: green;
+}
+
+div>span {
+    background-color: burlywood;
+    /* color: white; */
+}
+
+ul+p {
+    text-decoration: line-through;
+}
+
+span>span {
+    text-decoration: olive wavy underline 2px;
+}
+
+div#container>ul {
+    border: 1px solid black;
+}
+
+li.red~li {
+    background-color: blue;
+    color: antiquewhite;
+}
+
+li.green+li {
+    color: rgb(236, 4, 236)
+}
+
+li.green+li.yellow {
+    background-color: yellow;
+}
+
+li[data-attr] {
+    text-decoration: underline;
+}
+
+li[data-attr="attribute2"] {
+    text-decoration: underline red 3px;
+}
+
+li[data-attr*="bute3"] {
+    margin-top: 0.6rem;
+    text-decoration: overline blue 5px;
+}
+
+#pseudo-elements {
+    border: none;
+    padding: 1rem;
+}
+
+#pseudo-elements label,
+#pseudo-elements button,
+#pseudo-elements input {
+    display: block;
+    margin: 0.2rem;
+    margin-left: 2%;
+}
+
+#pseudo-elements label {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.required::after {
+    content: "*";
+}
+
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    margin-top: 0.4rem;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 0, 0.158);
+}
