@@ -10,10 +10,8 @@ function getSubsequences(idx = 0, list = []){
     
     list.push(arr2[idx]);
     getSubsequences(idx + 1, list);
-    console.log(list, "phase a", idx);
     list.pop();
     getSubsequences(idx + 1, list);
-    console.log(list, "phase r", idx);
 }
 
 getSubsequences(0, []);
