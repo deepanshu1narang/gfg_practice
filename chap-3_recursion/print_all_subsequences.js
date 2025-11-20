@@ -3,7 +3,7 @@
 const arr2 = [3, 1, 2];
 const n = arr2.length;
 function getSubsequences(idx = 0, list = []){
-    if(idx >= n){
+    if(idx === n){
         console.log(list);
         return;
     }
