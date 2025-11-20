@@ -43,3 +43,24 @@ function printSubsequences(arr, k, value, idx = 0, list = [], sum = 0){
 }
 
 console.log(getCountAndSubsequences([1,2,1], 2));
+
+// Return true if any one subsequence has sum = k
+
+function isSubsequnceWithSumKpresent(arr, k, idx = 0, list = [], sum = 0){
+    if(idx === arr.length){
+        return sum === k;
+    }
+    
+    list.push(arr[idx]);
+    sum += arr[idx];
+    if (isSubsequnceWithSumKpresent(arr, k, idx + 1, list, sum) === true)
+        return true;
+        
+    list.pop();
+    sum -= arr[idx];
+    
+    if (isSubsequnceWithSumKpresent(arr, k, idx + 1, list, sum) === true)
+        return true;
+        
+    return false;
+}
